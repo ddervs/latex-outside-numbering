@@ -8,6 +8,6 @@ pdflatex document.tex
 ```
 in the directory with the two files. Note sometimes it requires compiling twice to get the numbering correct.
 
-The BaseHTTPServer.py file is just sample code, taken from the Python 2.7 installation.
+The `BaseHTTPServer.py' file is just sample code, taken from the Python 2.7 installation.
 
 Enjoy!
