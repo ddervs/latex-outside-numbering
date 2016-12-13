@@ -2,7 +2,7 @@
 
 This package adds an option to the [`listings`](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/ "listings CTAN link") package in LaTeX. The option added is `numbers=outside`, which numbers the lines of a block of code on the outside margin of a document (i.e. on the right hand side for odd pages, and on the left for even pages). Designed for use in document classes with the 'twoside' option enabled.
 
-The implementation is shown in [`./document.tex`](./document.tex), which is easily compiled by executing
+The implementation is shown in [`document.tex`](./document.tex), which is easily compiled by executing
 ```
 pdflatex document.tex
 ```
