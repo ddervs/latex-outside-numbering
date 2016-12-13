@@ -1,13 +1,13 @@
 \documentclass[twoside]{article}
 
-% Set margins with geometry package, otherwise this hack is buggy.
+% Set margins with geometry package, otherwise unexpected results.
 \usepackage[a4paper, margin=1in]{geometry}
-% Required Packages
+% Required Packages and commands
 \usepackage{changepage}
 \usepackage{listings}
 \usepackage{outsidenumbering}
-\strictpagecheck
-
+\strictpagecheck 
+%
 \begin{document}
 % Include code (breaklines option recommended):
 \lstinputlisting[breaklines=true, numbers=outside]{./BaseHTTPServer.py}
