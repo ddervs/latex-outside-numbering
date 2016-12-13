@@ -1,1 +1,1 @@
-linguist-language=latex
+*.py linguist-language=latex
