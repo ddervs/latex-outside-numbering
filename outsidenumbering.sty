@@ -1,0 +1,26 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{outsidenumbering}[2016/12/13 Custom Package]
+
+\RequirePackage{listings}
+\RequirePackage{changepage}
+
+\lst@Key{numbers}{none}{%
+    \let\lst@PlaceNumber\@empty
+    \lstKV@SwitchCases{#1}%
+    {none&\\%
+     left&\def\lst@PlaceNumber{\llap{\normalfont%
+                \lst@numberstyle{\thelstnumber}\kern\lst@numbersep}}\\%
+     right&\def\lst@PlaceNumber{\rlap{\normalfont%
+                \kern\linewidth \kern\lst@numbersep%
+                \lst@numberstyle{\thelstnumber}}}\\%
+     outside&\def\lst@PlaceNumber{\checkoddpage
+     \ifoddpage%
+     \rlap{\normalfont%
+                \kern\linewidth \kern\lst@numbersep%
+                \lst@numberstyle{\thelstnumber}}%
+                \else%
+                \llap{\normalfont%
+                \lst@numberstyle{\thelstnumber}\kern\lst@numbersep}%
+                \fi%
+                }%
+    }{\PackageError{Listings}{Numbers #1 unknown}\@ehc}}

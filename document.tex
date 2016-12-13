@@ -1,42 +1,14 @@
 \documentclass[twoside]{article}
 
-% Set margins with geometry package, otherwise this hack is buggy. 
+% Set margins with geometry package, otherwise this hack is buggy.
 \usepackage[a4paper, margin=1in]{geometry}
-% Required Packages 
+% Required Packages
 \usepackage{changepage}
-\strictpagecheck
 \usepackage{listings}
+\usepackage{outsidenumbering}
+\strictpagecheck
 
 \begin{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%               Creating the `outside' option              %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makeatletter
-\lst@Key{numbers}{none}{%
-    \let\lst@PlaceNumber\@empty
-    \lstKV@SwitchCases{#1}%
-    {none&\\%
-     left&\def\lst@PlaceNumber{\llap{\normalfont%
-                \lst@numberstyle{\thelstnumber}\kern\lst@numbersep}}\\%
-     right&\def\lst@PlaceNumber{\rlap{\normalfont%
-                \kern\linewidth \kern\lst@numbersep%
-                \lst@numberstyle{\thelstnumber}}}\\%
-     outside&\def\lst@PlaceNumber{\checkoddpage
-     \ifoddpage%
-     \rlap{\normalfont%
-                \kern\linewidth \kern\lst@numbersep%
-                \lst@numberstyle{\thelstnumber}}%
-                \else%
-                \llap{\normalfont%
-                \lst@numberstyle{\thelstnumber}\kern\lst@numbersep}%
-                \fi%
-                }%
-    }{\PackageError{Listings}{Numbers #1 unknown}\@ehc}}
-\makeatother
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % Include code (breaklines option recommended):
 \lstinputlisting[breaklines=true, numbers=outside]{./BaseHTTPServer.py}
-
 \end{document}

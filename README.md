@@ -1,8 +1,8 @@
 # latex-outside-numbering
 
-This hack adds an option to the listings package in LaTeX. The option added is `numbers=outside`, which numbers the lines of a block of code on the outside margin of a document (i.e. on the right hand side for odd pages, and on the left for even pages). Designed for use in document classes with the 'twoside' option enabled. 
+This package adds an option to the listings package in LaTeX. The option added is `numbers=outside`, which numbers the lines of a block of code on the outside margin of a document (i.e. on the right hand side for odd pages, and on the left for even pages). Designed for use in document classes with the 'twoside' option enabled.
 
-The implementation is shown in `document.tex`, which is easily compiled with
+The implementation is shown in `document.tex`, which is easily compiled by executing
 ```
 pdflatex document.tex
 ```
